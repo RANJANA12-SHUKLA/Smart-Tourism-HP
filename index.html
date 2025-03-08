@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Tourism Management - Himachal Pradesh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Tourism Management - Himachal Pradesh</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#routes">Tourism Routes</a></li>
+            <li><a href="#guides">Tour Guides</a></li>
+            <li><a href="#hotels">Hotels</a></li>
+            <li><a href="#emergency">Emergency Support</a></li>
+        </ul>
+    </nav>
+    
+    <section id="routes">
+        <h2>Tourism Routes & Crowd Management</h2>
+        <p>Check the real-time crowd status and alternative routes.</p>
+        <div id="map"></div>
+    </section>
+    
+    <section id="guides">
+        <h2>Available Tour Guides</h2>
+        <ul id="guides-list"></ul>
+    </section>
+    
+    <section id="hotels">
+        <h2>Hotels & Stays</h2>
+        <ul id="hotels-list"></ul>
+    </section>
+    
+    <section id="emergency">
+        <h2>Emergency Support</h2>
+        <button onclick="getEmergencyContacts()">Get Emergency Contacts</button>
+        <div id="emergency-info"></div>
+    </section>
+    
+    <section id="chatbot">
+        <h2>AI Assistant Chatbot</h2>
+        <div id="chat-container">
+            <div id="chat-box"></div>
+            <input type="text" id="user-input" placeholder="Ask me anything...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
