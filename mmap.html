@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Tourist Crowd & Traffic Map</title>
+    
+    <style>
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+        #suggestion-box, #search-box {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
+        #search-box {
+            top: 50px;
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="suggestion-box">Enter a place to get recommendations.</div>
+    <div id="search-box">
+        <input type="text" id="place-input" placeholder="Enter tourist place">
+        <button onclick="searchPlace()">Go</button>
+    </div>
+
+</body>
+</html>

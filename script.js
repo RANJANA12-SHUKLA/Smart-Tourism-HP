@@ -130,25 +130,4 @@ function getEmergencyContacts() {
 
 // Chatbot Functionality
 function sendMessage() {
-    const userInput = document.getElementById("user-input").value;
-    const chatBox = document.getElementById("chat-box");
-    
-    if (userInput.trim() === "") return;
-    
-    const userMessage = `<p><strong>You:</strong> ${userInput}</p>`;
-    chatBox.innerHTML += userMessage;
-    document.getElementById("user-input").value = "";
-
-    setTimeout(() => {
-        const botResponse = `<p><strong>Bot:</strong> Sorry, I am still learning. Please check the information above.</p>`;
-        chatBox.innerHTML += botResponse;
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }, 1000);
-}
-
-// Initialize Functions on Load
-window.onload = function () {
-    loadTourGuides();
-    loadHotels();
-    initMap();
-};
+    const userInput = document.getElem
