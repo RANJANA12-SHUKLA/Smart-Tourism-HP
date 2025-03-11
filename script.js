@@ -130,4 +130,4 @@ function getEmergencyContacts() {
 
 // Chatbot Functionality
 function sendMessage() {
-    const userInput = document.getElem
+    const userInput = document.getElement}
