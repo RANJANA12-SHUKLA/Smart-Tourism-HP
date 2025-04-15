@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowd Prediction</title>
+    <script>
+        async function getPrediction() {
+            const hour = document.getElementById('hour').value;
+            const temperature = document.getElementById('temperature').value;
+            const humidity = document.getElementById('humidity').value;
+
+            const data = {
+                hour: hour,
+                temperature: parseFloat(temperature),
+                humidity: parseFloat(humidity)
+            };
+
+            const response = await fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            document.getElementById('prediction').textContent = 'Predicted Crowd Footfall: ' + result.predicted_footfall + ' people';
+        }
+    </script>
+</head>
+<body>
+    <h1>Crowd Prediction</h1>
+    <form onsubmit="event.preventDefault(); getPrediction();">
+        <label for="hour">Hour:</label>
+        <input type="number" id="hour" required><br><br>
+
+        <label for="temperature">Temperature (°C):</label>
+        <input type="number" id="temperature" step="0.1" required><br><br>
+
+        <label for="humidity">Humidity (%):</label>
+        <input type="number" id="humidity" step="0.1" required><br><br>
+
+        <button type="submit">Get Prediction</button>
+    </form>
+
+    <p id="prediction"></p>
+</body>
+</html>
